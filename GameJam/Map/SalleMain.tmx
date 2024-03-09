@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="left-up" width="25" height="19" tilewidth="32" tileheight="32" infinite="0" nextlayerid="13" nextobjectid="34">
+ <tileset firstgid="1" name="Sol" tilewidth="32" tileheight="32" tilecount="450" columns="25">
+  <properties>
+   <property name="Solid" type="bool" value="false"/>
+  </properties>
+  <image source="Sol.jpg" trans="7e7e8f" width="800" height="599"/>
+ </tileset>
+ <tileset firstgid="451" name="Mur " tilewidth="32" tileheight="32" tilecount="391" columns="17">
+  <properties>
+   <property name="Solid" type="bool" value="true"/>
+  </properties>
+  <image source="Room.png" trans="7e7e8f" width="544" height="736"/>
+ </tileset>
+ <tileset firstgid="842" name="Escalier" tilewidth="32" tileheight="32" tilecount="1424" columns="16">
+  <properties>
+   <property name="Solid" type="bool" value="false"/>
+  </properties>
+  <image source="Interieur.png" width="512" height="2848"/>
+ </tileset>
+ <tileset firstgid="2266" name="Meubles" tilewidth="32" tileheight="32" tilecount="576" columns="24">
+  <properties>
+   <property name="Solid" type="bool" value="true"/>
+  </properties>
+  <image source="School.png" width="768" height="768"/>
+ </tileset>
+ <tileset firstgid="2842" name="Poteau" tilewidth="32" tileheight="32" tilecount="36" columns="6">
+  <properties>
+   <property name="Solid" type="bool" value="true"/>
+  </properties>
+  <image source="Poteau.png" width="192" height="192"/>
+ </tileset>
+ <tileset firstgid="2878" name="Interiors_free_32x32_dg" tilewidth="32" tileheight="32" tilecount="1424" columns="89">
+  <properties>
+   <property name="Solid" type="bool" value="true"/>
+  </properties>
+  <image source="Interiors_free_32x32_dg.png" trans="282828" width="2848" height="512"/>
+  <tile id="0">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </tile>
+ </tileset>
+ <tileset firstgid="4302" name="jp le retour" tilewidth="32" tileheight="32" tilecount="4" columns="2">
+  <image source="pingouin2.png" width="64" height="64"/>
+ </tileset>
+ <layer id="1" name="Sol1" width="25" height="19">
+  <data encoding="base64" compression="zlib">
+   eJxjY2ZgYKch5gBiLiDmJgHDALHqeZDsWMYAwRl48Es0jE9tBsPgtYNUjG4HNc0etWN42GE9asegio9RO0ivP0jFIDvEgViChlgSiAHhBY5z
+  </data>
+ </layer>
+ <layer id="4" name="Meubles2" width="25" height="19">
+  <data encoding="base64" compression="zlib">
+   eJxjYKAfkGcmDpOiHhnwoPGpBbiQzB21Y9SOUTtoYwcbUC87DowMKLED5FZuHHjUjsFrBwjgShuE8GABACHYBpM=
+  </data>
+ </layer>
+ <layer id="5" name="Escaliers3" width="25" height="19">
+  <data encoding="base64" compression="zlib">
+   eJxjYBheoJ6ZgaEZCTcxU9+OfjQ7Jo3aMQpGwSgYBaMADwAAekgKxQ==
+  </data>
+ </layer>
+ <layer id="10" name="Porte2" width="25" height="19">
+  <data encoding="base64" compression="zlib">
+   eJxjYCAN8LAyMPCykqiJRCADNF+Whna8BZr9Dorf08iev0Bz/0HxfyQ7mrkYGFqQcDsX9e2eDTTzLBKeTwM7NqPZsZ0GdpxGs+M8Dex4DDTzCRA/BeJnQPycBnaAwB+guX+B+B+NzCcWHGNnYDjOTro+fjYGBnkgVsBCo4NrQPOvk2EHKWDUDuLBM6D5z2lsxyggDAAYbioo
+  </data>
+ </layer>
+ <layer id="11" name="JP4" width="25" height="19">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgZ4JwAA8N5AdracQFo/kUa2zEKRsEoGAWjYOgBABMKA38=
+  </data>
+ </layer>
+ <layer id="9" name="Poteau3" width="25" height="19">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFowABZLgZGGS5CYuRCxSB5igBsTI3fjFKgDrQHA0g1uTGLzbY7TAGmmMCxKbc+MUoBVZAs6y5CYtRAgYiXYEAvdKV/hCyYzilq6EEAERXDSE=
+  </data>
+ </layer>
+ <objectgroup id="12" name="Calque d'Objets 1">
+  <object id="1" type="collision" x="8.02108" y="-2.22757e-05" width="791.795" height="64.0281"/>
+  <object id="2" type="collision" x="16.0422" y="65.3145" width="43.543" height="523.662"/>
+  <object id="4" type="collision" x="28.6467" y="547.725" width="550.017" height="52.71"/>
+  <object id="6" type="collision" x="513.349" y="352.928" width="252.091" height="244.07"/>
+  <object id="8" type="collision" x="736.794" y="2.2917" width="64.1687" height="419.388"/>
+  <object id="10" type="collision" x="87.0861" y="64.1687" width="105.42" height="126.046"/>
+  <object id="11" type="collision" x="58.4393" y="333.448" width="68.7521" height="156.984"/>
+  <object id="12" type="collision" x="224.59" y="190.214" width="59.5852" height="113.441"/>
+  <object id="13" type="collision" x="236.049" y="175.318" width="35.5219" height="13.7504"/>
+  <object id="14" type="collision" x="232.611" y="303.655" width="40.1054" height="14.8963"/>
+  <object id="15" type="collision" x="386.158" y="193.652" width="59.5852" height="111.149"/>
+  <object id="16" type="collision" x="394.179" y="174.172" width="35.5219" height="20.6256"/>
+  <object id="17" type="collision" x="397.617" y="303.655" width="32.0843" height="14.8963"/>
+  <object id="18" type="collision" x="568.351" y="115.733" width="110.003" height="119.17"/>
+  <object id="19" type="collision" x="544.288" y="140.942" width="20.6256" height="89.3778"/>
+  <object id="20" type="collision" x="571.789" y="240.633" width="108.858" height="38.9596"/>
+  <object id="21" type="collision" x="686.376" y="135.213" width="18.3339" height="98.5447"/>
+  <object id="22" type="collision" x="223.444" y="386.158" width="58.4393" height="108.858"/>
+  <object id="24" type="collision" x="240.633" y="367.824" width="29.7926" height="19.4798"/>
+  <object id="25" type="collision" x="234.903" y="490.432" width="34.3761" height="20.6256"/>
+  <object id="26" type="collision" x="382.72" y="381.574" width="60.7311" height="113.441"/>
+  <object id="27" type="collision" x="396.471" y="365.532" width="35.5219" height="16.0422"/>
+  <object id="28" type="collision" x="395.325" y="496.161" width="41.2513" height="14.8963"/>
+  <object id="29" type="collision" x="514.495" y="313.968" width="223.444" height="38.9596"/>
+  <object id="32" type="dialogue" x="253.237" y="66.4601" width="72.1898" height="65.3145"/>
+ </objectgroup>
+</map>
