@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="675.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.uga.iut2.genevent.controleur.Etape2Ctrl">
+   <children>
+      <HBox alignment="CENTER_LEFT" style="-fx-background-color: #0A2B58;">
+         <children>
+            <ImageView fx:id="logo" fitHeight="90.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true" />
+            <Label prefHeight="26.0" prefWidth="157.0" text="Trac'Event" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin></Label>
+            <HBox alignment="CENTER_RIGHT" prefHeight="90.0" prefWidth="718.0">
+               <children>
+                  <Button fx:id="accueil" mnemonicParsing="false" onAction="#retourAccueil" prefHeight="51.0" prefWidth="105.0" style="-fx-background-color: #216db5; -fx-border-color: #4E4E4E; -fx-border-radius: 5px;" text="Accueil" textFill="WHITE">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets right="30.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <HBox.margin>
+                  <Insets left="70.0" />
+               </HBox.margin></HBox>
+         </children></HBox>
+      <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="675.0" prefWidth="1200.0">
+         <children>
+            <Label prefHeight="17.0" prefWidth="1000.0" text="Creer un tournoi &gt; Places disponibles">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="10.0" />
+               </VBox.margin>
+            </Label>
+            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="304.0" scaleX="1.5" scaleY="1.5">
+               <children>
+                  <Line endX="-75.0" layoutY="20.0" startX="-100.0" strokeWidth="2.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="280.0" AnchorPane.topAnchor="20.0" />
+                  <Line endX="-75.0" layoutX="264.0" layoutY="21.0" startX="-100.0" AnchorPane.leftAnchor="172.0" AnchorPane.topAnchor="20.0" />
+                  <Line endX="-75.0" layoutX="329.0" layoutY="22.0" startX="-100.0" AnchorPane.leftAnchor="238.0" />
+                  <Circle fill="#216db5" layoutX="24.0" layoutY="17.0" radius="20.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="320.0" AnchorPane.topAnchor="0.0" />
+                  <Circle fill="#d69901" layoutX="84.0" layoutY="20.0" radius="20.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.leftAnchor="66.0" AnchorPane.topAnchor="0.0" />
+                  <Circle fill="#216db5" layoutX="149.0" layoutY="21.0" radius="20.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.leftAnchor="132.0" AnchorPane.topAnchor="0.0" />
+                  <Circle fill="#216db5" layoutX="209.0" layoutY="22.0" radius="20.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.leftAnchor="198.0" AnchorPane.topAnchor="0.0" />
+                  <Circle accessibleText="5" fill="#216db5" layoutX="274.0" layoutY="23.0" radius="20.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="264.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <Text layoutX="10.0" layoutY="10.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1" textAlignment="CENTER" wrappingWidth="20.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0" />
+                  <Text layoutX="81.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2" textAlignment="CENTER" wrappingWidth="20.0" AnchorPane.leftAnchor="76.0" AnchorPane.topAnchor="10.0" />
+                  <Text layoutX="144.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3" textAlignment="CENTER" wrappingWidth="20.0" AnchorPane.leftAnchor="142.0" AnchorPane.topAnchor="10.0" />
+                  <Text layoutX="205.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="4" textAlignment="CENTER" wrappingWidth="20.0" AnchorPane.leftAnchor="208.0" AnchorPane.topAnchor="10.0" />
+                  <Text layoutX="265.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="5" textAlignment="CENTER" wrappingWidth="20.0" AnchorPane.leftAnchor="274.0" AnchorPane.topAnchor="10.0" />
+                  <Line endX="-75.0" layoutX="201.0" layoutY="21.0" startX="-100.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="60.0" AnchorPane.topAnchor="20.0" />
+                  <Line endX="-75.0" layoutX="151.0" layoutY="31.0" startX="-100.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="106.0" AnchorPane.topAnchor="20.0" />
+               </children>
+               <VBox.margin>
+                  <Insets bottom="20.0" top="20.0" />
+               </VBox.margin>
+            </AnchorPane>
+            <Separator prefWidth="200.0">
+               <VBox.margin>
+                  <Insets bottom="10.0" top="10.0" />
+               </VBox.margin>
+            </Separator>
+            <Label maxHeight="-Infinity" maxWidth="-Infinity" text="Nombre de places">
+               <font>
+                  <Font size="30.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="10.0" />
+               </VBox.margin>
+            </Label>
+            <GridPane VBox.vgrow="ALWAYS">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="83.0" minHeight="5.0" prefHeight="33.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="173.0" minHeight="10.0" prefHeight="158.0" valignment="TOP" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="63.0" minHeight="9.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="128.0" minHeight="10.0" prefHeight="109.0" valignment="TOP" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="Nombre de places spectateur">
+                     <GridPane.margin>
+                        <Insets left="200.0" />
+                     </GridPane.margin>
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Label text="Nombre de participants" GridPane.rowIndex="2">
+                     <GridPane.margin>
+                        <Insets left="200.0" />
+                     </GridPane.margin>
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="tfPlacesSpec" maxHeight="-Infinity" maxWidth="-Infinity" onMouseClicked="#resetSpec" prefHeight="30.0" prefWidth="400.0" GridPane.halignment="RIGHT">
+                     <GridPane.margin>
+                        <Insets right="100.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField fx:id="tfPlacesParticipants" maxHeight="-Infinity" maxWidth="-Infinity" onMouseClicked="#resetPart" prefHeight="30.0" prefWidth="400.0" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+                     <GridPane.margin>
+                        <Insets right="100.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <Label fx:id="lNbSpec" alignment="CENTER_RIGHT" contentDisplay="RIGHT" maxWidth="1.7976931348623157E308" textFill="FIREBRICK" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets right="100.0" />
+                     </GridPane.margin>
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lNbPart" alignment="CENTER_RIGHT" contentDisplay="RIGHT" maxWidth="1.7976931348623157E308" textAlignment="JUSTIFY" textFill="FIREBRICK" GridPane.rowIndex="3">
+                     <GridPane.margin>
+                        <Insets right="100.0" />
+                     </GridPane.margin>
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </GridPane>
+         </children>
+      </VBox>
+      <HBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="1000.0" spacing="625.0">
+         <children>
+            <Button fx:id="retourBtn" alignment="CENTER" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#retourButtonAction" prefHeight="75.0" prefWidth="175.0" style="-fx-background-color: #216db5;" text="&lt;- Retour" textFill="WHITE">
+               <HBox.margin>
+                  <Insets left="20.0" />
+               </HBox.margin>
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+            <Button fx:id="validerBtn" alignment="CENTER" contentDisplay="TOP" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#validerButtonAction" prefHeight="75.0" prefWidth="175.0" style="-fx-background-color: #216db5;" text="Valider -&gt;" textFill="WHITE">
+               <HBox.margin>
+                  <Insets right="20.0" />
+               </HBox.margin>
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+         </children>
+         <VBox.margin>
+            <Insets bottom="10.0" />
+         </VBox.margin>
+      </HBox>
+   </children>
+</VBox>
