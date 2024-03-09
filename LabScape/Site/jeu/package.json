@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "@babylonjs/core": "^6.39.0",
+    "babylonjs": "^6.39.0",
+    "sweetalert2": "^11.6.13"
+  }
+}

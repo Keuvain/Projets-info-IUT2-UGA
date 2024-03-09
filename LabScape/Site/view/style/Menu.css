@@ -1,0 +1,72 @@
+html{
+    background-color: black;
+}
+body {
+    margin: 0px;
+    height: 100vh;
+  }
+  
+  img {
+    position: absolute;
+    height: 100vh;
+    left: 40vh;
+
+  }
+audio{
+    display: none;
+}
+button{
+    position: absolute;
+   display: block;
+   text-decoration: none;
+   color: aliceblue;
+   border: none;
+   outline: none;
+   padding: 0px; 
+   background-color: black; 
+}
+.bo{
+    top: 87.5vh;
+    left: 95.2vh;
+    font-size: 4vh;
+}
+.reg{
+    top: 88.5vh;
+    left: 106vh;
+    font-size: 3vh;
+}
+/*LINK*/
+ a {
+   position: absolute;
+   display: block;
+   text-decoration: none;
+   color: aliceblue;
+   
+}
+.com{
+    top: 77.5vh;
+    left: 79.5vh;
+    font-size: 3.5vh;
+    color: black;
+}
+.cre{
+    top: 77.5vh;
+    left: 60vh;
+    font-size: 3.5vh;
+}
+.rank{
+    top: 77.5vh;
+    left: 109vh;
+    font-size: 3vh;
+}
+
+.para{
+    top: 87.5vh;
+    left: 83.2vh;
+    font-size: 4vh;
+}
+.sc{
+    top: 88vh;
+    left: 64.5vh;
+    font-size: 4vh;
+}

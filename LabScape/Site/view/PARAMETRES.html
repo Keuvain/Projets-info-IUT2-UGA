@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="../view/script/scriptParametre.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="../view/style/Paramètres.css" rel="stylesheet" type="text/css" />
+   <title>LAB'SCAPE-paramètres</title>
+</head>
+<body>
+  <img src="../view/assets/Paramètres.png" alt="Paramètres" id="fond">
+  <h1>PARAMÈTRES</h1>
+  <div class="container">
+    <input type="range" id="brightnessRange" min="0" max="200" value="100">
+  </div>
+  <div class="container">
+    <input type="range" id="dialoguesRange" min="0" max="200" value="100">
+  </div>
+  <div class="container">
+    <input type="range" id="sonRange" min="0" max="200" value="100">
+  </div>
+  <h3 class="lum">LUMINOSITÉ</h3>
+  <h3 class="son">SON</h3>
+  <h3 class="dia">DIALOGUES</h3>
+  <button onclick="changerPage()" class="bo">Appliquer</button>
+  <audio id="myAudio" controls>
+    <source src="../view/song/imperfect.mp3" type="audio/mp3">
+</audio>
+</body>
+</html>

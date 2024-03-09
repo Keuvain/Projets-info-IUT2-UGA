@@ -1,0 +1,2 @@
+INSERT INTO ROLE(content) VALUES ('ELEVE'), ('PROF');
+

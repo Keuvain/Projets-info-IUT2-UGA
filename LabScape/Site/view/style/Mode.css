@@ -1,0 +1,80 @@
+html{
+    background-color: black;
+}
+body {
+    margin: 0;
+    height: 100vh;
+   
+  }
+#fond{
+    position: absolute;
+    height: 100vh;
+    left: 40vh;
+
+}
+#charger{
+    height: 10vh;
+}
+p{
+    position: absolute;
+    top:35vh;
+    left: 75vh; 
+    font-size: 8vh; 
+
+}
+.animationTexte {
+    opacity: 0;
+}
+#texteChangeant {
+    transition: opacity 0.5s ease-in-out;
+  }
+/*bouton*/
+a{
+    position: absolute;
+    display: block;
+    text-decoration: none;
+    color: aliceblue;
+    top: 91.5vh;
+    left: 42vh;
+    font-size: 3.5vh;
+}
+button{
+    position: absolute;
+   display: block;
+   text-decoration: none;
+   color: aliceblue;
+   border: none;
+   outline: none;
+   padding: 0px; 
+   background-color: black; 
+   font-size: 4vh;
+}
+.bo{
+    top: 90.5vh;
+    left: 133vh;
+    
+}
+.st{
+    top: 91vh;
+    left: 85.5vh;
+    
+}
+.charger{
+    position: absolute;
+    background-color: #FFFFFD;
+    top: 58vh;
+    left: 86.2vh;
+}
+/*phisique-chimie*/
+h1{
+    position: absolute;
+    font-size: 4vh;
+    color: white;
+}
+.ph{
+    left: 54vh;
+}
+.ch{
+    
+    left: 117vh;
+}

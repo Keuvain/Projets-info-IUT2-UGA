@@ -1,0 +1,101 @@
+html{
+  background-color: black;
+}
+body {
+  transition: filter 0.3s ease-in-out;
+  margin: 0px;
+}
+audio{
+display: none;
+}
+h1{
+  position: absolute;
+  top: 12vh;
+  left: 69vh;
+  font-size: 6vh;
+}
+h3{
+position: absolute;
+margin: 0px;
+font-size: 2vh;
+
+}
+.lum{
+top: 69vh;
+left: 83vh;
+}
+.dia{
+top: 51vh;
+left: 83.5vh;
+}
+.son{
+top: 32vh;
+left: 87vh;
+}
+#fond{
+  position: absolute;
+  height: 100vh;
+  left: 40vh;
+}
+
+input[type="range"] {
+  position: absolute;
+  width: 50vh;
+  appearance: none;
+  height: 0px;
+  background: linear-gradient(to right, #db0d0d, #e20707) no-repeat;
+  background-size: 100% 100%;
+  border-radius: 5px;
+  outline: none;
+  margin: 0;
+  cursor: pointer;
+  left: 65vh;
+
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  width: 7vh;
+  height: 7vh;
+  background: url('../assets/bouton.png');
+  background-size: cover;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+#brightnessRange{
+top: 75vh;
+}
+#dialoguesRange{
+top: 57vh;
+
+}
+#sonRange{
+top: 38vh;
+}
+
+
+div{
+  margin: 0px;
+}
+
+button{
+position: absolute;
+ display: block;
+ text-decoration: none;
+ color: black;
+ border: none;
+ outline: none;
+ padding-left: 13vh; 
+ background:none; 
+ font-size: 4vh;
+ top: 85.5vh;
+ left: 68.5vh;
+
+}
+button:hover{
+background-color: #946949;
+padding-right: 13vh;
+border-radius: 2vh;
+padding-left: 13vh;
+}

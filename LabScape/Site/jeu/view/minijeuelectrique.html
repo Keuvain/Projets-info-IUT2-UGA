@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Jeu de Circuit Électrique Interactif</title>
+    <style>
+        #workspace {
+            width: 800px;
+            height: 600px;
+            border: 1px solid black;
+            position: relative;
+            background-color: #f0f0f0;
+        }
+        .component {
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            cursor: pointer;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-size: cover;
+        }
+        .connection-line {
+            stroke: #000;
+            stroke-width: 2;
+        }
+    </style>
+</head>
+<body>
+    <div id="workspace">
+        <svg id="connectionLayer" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none;"></svg>
+        <div id="battery" class="component" style="top: 100px; left: 50px; background-image: url('https://img.icons8.com/ios-filled/50/000000/battery-level.png');"></div>
+        <div id="lightbulb" class="component" style="top: 100px; left: 150px; background-image: url('https://img.icons8.com/ios-filled/50/000000/light.png');"></div>
+        <div id="resistor" class="component" style="top: 100px; left: 250px; background-image: url('https://img.icons8.com/ios-filled/50/000000/resistor.png');"></div>
+        <div id="wire" class="component" style="top: 100px; left: 350px; background-image: url('https://img.icons8.com/ios-filled/50/000000/electrical.png');"></div>
+    </div>
+    <p id="status"></p>
+    <p id="voltage">Voltage: 0V</p>
+
+    <script>
+        var selectedElement = null;
+        var connections = [];
+        var voltage = 0;
+
+        document.querySelectorAll('.component').forEach(function(component) {
+            component.addEventListener('click', function(e) {
+                if (selectedElement) {
+                    createConnection(selectedElement, e.target);
+                    selectedElement = null;
+                } else {
+                    selectedElement = e.target;
+                }
+            });
+        });
+
+        function createConnection(element1, element2) {
+            var svg = document.getElementById('connectionLayer');
+            var line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+            line.setAttribute('class', 'connection-line');
+            line.setAttribute('x1', element1.offsetLeft + 25);
+            line.setAttribute('y1', element1.offsetTop + 25);
+            line.setAttribute('x2', element2.offsetLeft + 25);
+            line.setAttribute('y2', element2.offsetTop + 25);
+            svg.appendChild(line);
+
+            connections.push([element1.id, element2.id]);
+            updateCircuitStatus();
+        }
+
+        function updateCircuitStatus() {
+            // Simplified logic for circuit completion and voltage calculation
+            if (connections.length >= 3) {
+                document.getElementById('status').innerText = 'Circuit complet!';
+                voltage = 5; // Exemple de voltage fixe
+            } else {
+                document.getElementById('status').innerText = 'Circuit incomplet';
+                voltage = 0;
+            }
+            document.getElementById('voltage').innerText = 'Voltage: ' + voltage + 'V';
+        }
+    </script>
+</body>
+</html>

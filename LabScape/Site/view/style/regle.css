@@ -1,0 +1,55 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+}
+
+.controls {
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.keyboard .row {
+    display: flex;
+}
+
+.keyboard .key {
+    font-size: 24px;
+    margin: 5px;
+    padding: 10px;
+    border: 2px solid #000;
+    min-width: 40px;
+    text-align: center;
+}
+
+.keyboard .descriptions {
+    display: flex;
+    justify-content: space-around;
+}
+
+.keyboard .description {
+    margin-top: 10px;
+    font-size: 16px;
+    flex: 1;
+    text-align: center;
+}
+
+.mouse .mouse-icon {
+    width: 50px;
+    height: auto;
+    margin-left: 20px;
+}
+
+.mouse .description {
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+.key {
+    cursor: pointer;
+}

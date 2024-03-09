@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mini Jeu QCM - Électricité</title>
+    <!-- Inclure Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.7.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Inclure la bibliothèque Font Awesome pour les icônes -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link href="../view/style/qcm.css" rel="stylesheet" type="text/css" />
+    <script src="../view/script/scriptQCM.js" defer></script>
+
+
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Mini Jeu QCM - Électricité</h1>
+        
+        <!-- Question 1 -->
+        <div id="question1" class="page-container">
+            <div class="question">Question 1: Quelle unité de mesure est utilisée pour quantifier la résistance électrique ?</div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="question1" id="q1Option1" value="a">
+                <label class="form-check-label option" for="q1Option1">a) Ampère (A)</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="question1" id="q1Option2" value="b">
+                <label class="form-check-label option" for="q1Option2">b) Ohm (Ω)</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="question1" id="q1Option3" value="c">
+                <label class="form-check-label option" for="q1Option3">c) Volt (V)</label>
+            </div>
+            <button class="btn btn-primary" onclick="checkAnswer(1)">Vérifier la Réponse</button>
+            <p id="result1"></p>
+        </div>
+
+        <!-- Question 2 -->
+        <div id="question2" class="page-container" style="display: none;">
+            <div class="question">Question 2: Dans un circuit électrique, quelle composante stocke généralement l'énergie électrique ?</div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="question2" id="q2Option1" value="a">
+                <label class="form-check-label option" for="q2Option1">a) La résistance</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="question2" id="q2Option2" value="b">
+                <label class="form-check-label option" for="q2Option2">b) La batterie</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="question2" id="q2Option3" value="c">
+                <label class="form-check-label option" for="q2Option3">c) Le commutateur</label>
+            </div>
+            <button class="btn btn-primary" onclick="checkAnswer(2)">Vérifier la Réponse</button>
+            <p id="result2"></p>
+        </div>
+
+        <!-- Question 3 -->
+        <div id="question3" class="page-container" style="display: none;">
+            <div class="question">Question 3: Quelle est la formule pour calculer la puissance électrique dans un circuit ?</div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="question3" id="q3Option1" value="a">
+                <label class="form-check-label option" for="q3Option1">a) P = U x I</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="question3" id="q3Option2" value="b">
+                <label class="form-check-label option" for="q3Option2">b) P = R / I</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="question3" id="q3Option3" value="c">
+                <label class="form-check-label option" for="q3Option3">c) P = U / R</label>
+            </div>
+            <button class="btn btn-primary" onclick="checkAnswer(3)">Vérifier la Réponse</button>
+            <p id="result3"></p>
+        </div>
+
+        <!-- Question 4 -->
+        <div id="question4" class="page-container" style="display: none;">
+            <div class="question">Question 4: Quelle unité de mesure est utilisée pour quantifier l'intensité du courant électrique ?</div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="question4" id="q4Option1" value="a">
+                <label class="form-check-label option" for="q4Option1">a) Watt (W)</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="question4" id="q4Option2" value="b">
+                <label class="form-check-label option" for="q4Option2">b) Ampère (A)</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="question4" id="q4Option3" value="c">
+                <label class="form-check-label option" for="q4Option3">c) Volt (V)</label>
+            </div>
+            <button class="btn btn-primary" onclick="checkAnswer(4)">Vérifier la Réponse</button>
+            <p id="result4"></p>
+        </div>
+
+        <!-- Question 5 -->
+        <div id="question5" class="page-container" style="display: none;">
+            <div class="question">Question 5: Quelle unité de mesure est utilisée pour quantifier l'intensité du courant électrique ?</div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="question5" id="q5Option1" value="a">
+                <label class="form-check-label option" for="q5Option1">a) Watt (W)</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="question5" id="q5Option2" value="b">
+                <label class="form-check-label option" for="q5Option2">b) Ampère (A)</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="question5" id="q5Option3" value="c">
+                <label class="form-check-label option" for="q5Option3">c) Volt (V)</label>
+            </div>
+            <button class="btn btn-primary" onclick="checkAnswer(5)">Vérifier la Réponse</button>
+            <p id="result5"></p>
+        </div>
+
+        <!-- Question 6 -->
+        <div id="question6" class="page-container" style="display: none;">
+            <div class="question">Question 6: Quel composant est utilisé pour stocker une charge électrique dans un circuit ?</div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="question6" id="q6Option1" value="a">
+                <label class="form-check-label option" for="q6Option1">a) Résistance</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="question6" id="q6Option2" value="b">
+                <label class="form-check-label option" for="q6Option2">b) Condensateur</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="question6" id="q6Option3" value="c">
+                <label class="form-check-label option" for="q6Option3">c) Diode</label>
+            </div>
+            <button class="btn btn-primary" onclick="checkAnswer(6)">Vérifier la Réponse</button>
+            <p id="result6"></p>
+        </div>
+
+        <!-- Question 7 -->
+        <div id="question7" class="page-container" style="display: none;">
+            <div class="question">Question 7: Dans un circuit électrique, quelle composante limite le courant en ne laissant passer le courant que dans un sens ?</div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="question7" id="q7Option1" value="a">
+                <label class="form-check-label option" for="q7Option1">a) Condensateur</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="question7" id="q7Option2" value="b">
+                <label class="form-check-label option" for="q7Option2">b) Diode</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="question7" id="q7Option3" value="c">
+                <label class="form-check-label option" for="q7Option3">c) Résistance</label>
+            </div>
+            <button class="btn btn-primary" onclick="checkAnswer(7)">Vérifier la Réponse</button>
+            <p id="result7"></p>
+        </div>
+
+        <!-- Question 8 -->
+        <div id="question8" class="page-container" style="display: none;">
+            <div class="question">Question 8: Quelle composante est utilisée pour augmenter la tension électrique dans un circuit ?</div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="question8" id="q8Option1" value="a">
+                <label class="form-check-label option" for="q8Option1">a) Résistance</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="question8" id="q8Option2" value="b">
+                <label class="form-check-label option" for="q8Option2">b) Condensateur</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="question8" id="q8Option3" value="c">
+                <label class="form-check-label option" for="q8Option3">c) Transformateur</label>
+            </div>
+            <button class="btn btn-primary" onclick="checkAnswer(8)">Vérifier la Réponse</button>
+            <p id="result8"></p>
+        </div>
+
+        <!-- Question 9 -->
+        <div id="question9" class="page-container" style="display: none;">
+            <div class="question">Question 9: Dans un circuit électrique, quelle composante est généralement utilisée pour mesurer le courant ?</div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="question9" id="q9Option1" value="a">
+                <label class="form-check-label option" for="q9Option1">a) Ampèremètre</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="question9" id="q9Option2" value="b">
+                <label class="form-check-label option" for="q9Option2">b) Voltmètre</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="question9" id="q9Option3" value="c">
+                <label class="form-check-label option" for="q9Option3">c) Résistance</label>
+            </div>
+            <button class="btn btn-primary" onclick="checkAnswer(9)">Vérifier la Réponse</button>
+            <p id="result9"></p>
+        </div>
+
+        <!-- Question 10 -->
+        <div id="question10" class="page-container" style="display: none;">
+            <div class="question">Question 10: Quel est l'effet de l'augmentation de la résistance dans un circuit électrique ?</div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="question10" id="q10Option1" value="a">
+                <label class="form-check-label option" for ="q10Option1">a) Augmentation du courant</label>
+            </div>
+            <div class="form-check">
+            <input class="form-check-input" type="radio" name="question10" id="q10Option2" value="b">
+            <label class="form-check-label option" for="q10Option2">b) Diminution du courant</label>
+            </div>
+            <div class="form-check">
+            <input class="form-check-input" type="radio" name="question10" id="q10Option3" value="c">
+            <label class="form-check-label option" for="q10Option3">c) Aucun effet sur le courant</label>
+            </div>
+            <button class="btn btn-primary" onclick="checkAnswer(10)">Vérifier la Réponse</button>
+            <p id="result10"></p>
+            </div>
+            <!-- Question 11 -->
+<div id="question11" class="page-container" style="display: none;">
+    <div class="question">Question 11: Quelle est la puissance dissipée par une résistance de 15 ohms traversée par un courant de 5 ampères ?</div>
+    <div class="form-check">
+        <input class="form-check-input" type="radio" name="question6" id="q6Option1" value="a">
+        <label class="form-check-label option" for="q6Option1">a) 15 watts</label>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="radio" name="question6" id="q6Option2" value="b">
+        <label class="form-check-label option" for="q6Option2">b) 25 watts</label>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="radio" name="question6" id="q6Option3" value="c">
+        <label class="form-check-label option" for="q6Option3">c) 75 watts</label>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="radio" name="question6" id="q6Option4" value="d">
+        <label class="form-check-label option" for="q6Option4">d) 100 watts</label>
+    </div>
+    <button class="btn btn-primary" onclick="checkAnswer(6)">Vérifier la Réponse</button>
+    <p id="result6"></p>
+</div>
+
+<!-- Question 12 -->
+<div id="question12" class="page-container" style="display: none;">
+    <div class="question">Question 12: Si une tension de 24 volts est appliquée aux bornes d'une résistance de 6 ohms, quel est le courant électrique qui la traverse ?</div>
+    <div class="form-check">
+        <input class="form-check-input" type="radio" name="question7" id="q7Option1" value="a">
+        <label class="form-check-label option" for="q7Option1">a) 2 ampères</label>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="radio" name="question7" id="q7Option2" value="b">
+        <label class="form-check-label option" for="q7Option2">b) 4 ampères</label>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="radio" name="question7" id="q7Option3" value="c">
+        <label class="form-check-label option" for="q7Option3">c) 6 ampères</label>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="radio" name="question7" id="q7Option4" value="d">
+        <label class="form-check-label option" for="q7Option4">d) 8 ampères</label>
+    </div>
+    <button class="btn btn-primary" onclick="checkAnswer(7)">Vérifier la Réponse</button>
+    <p id="result7"></p>
+</div>
+
+<!-- Question 13 -->
+<div id="question13" class="page-container" style="display: none;">
+    <div class="question">Question 13: Une batterie fournit une tension de 12 volts et une résistance de 3 ohms est connectée à ses bornes. Quelle est l'intensité du courant électrique ?</div>
+    <div class="form-check">
+        <input class="form-check-input" type="radio" name="question8" id="q8Option1" value="a">
+        <label class="form-check-label option" for="q8Option1">a) 1 ampère</label>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="radio" name="question8" id="q8Option2" value="b">
+        <label class="form-check-label option" for="q8Option2">b) 3 ampères</label>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="radio" name="question8" id="q8Option3" value="c">
+        <label class="form-check-label option" for="q8Option3">c) 6 ampères</label>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="radio" name="question8" id="q8Option4" value="d">
+        <label class="form-check-label option" for="q8Option4">d) 9 ampères</label>
+    </div>
+    <button class="btn btn-primary" onclick="checkAnswer(8)">Vérifier la Réponse</button>
+    <p id="result8"></p>
+</div>
+
+<!-- Question 14-->
+<div id="question14" class="page-container" style="display: none;">
+    <div class="question">Question 14: Si la puissance dissipée par une résistance est de 36 watts et le courant électrique qui la traverse est de 4 ampères, quelle est la valeur de la résistance ?</div>
+    <div class="form-check">
+        <input class="form-check-input" type="radio" name="question9" id="q9Option1" value="a">
+        <label class="form-check-label option" for="q9Option1">a) 3 ohms</label>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="radio" name="question9" id="q9Option2" value="b">
+        <label class="form-check-label option" for="q9Option2">b) 6 ohms</label>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="radio" name="question9" id="q9Option3" value="c">
+        <label class="form-check-label option" for="q9Option3">c) 9 ohms</label>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="radio" name="question9" id="q9Option4" value="d">
+        <label class="form-check-label option" for="q9Option4">d) 12 ohms</label>
+    </div>
+    <button class="btn btn-primary" onclick="checkAnswer(9)">Vérifier la Réponse</button>
+    <p id="result9"></p>
+</div>
+
+<!-- Question 15 -->
+<div id="question15" class="page-container" style="display: none;">
+    <div class="question">Question 15: Quel est l'effet de l'augmentation de la résistance dans un circuit électrique ?</div>
+    <div class="form-check">
+        <input class="form-check-input" type="radio" name="question10" id="q10Option1" value="a">
+        <label class="form-check-label option" for="q10Option1">a) Augmentation du courant</label>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="radio" name="question10" id="q10Option2" value="b">
+        <label class="form-check-label option" for="q10Option2">b) Diminution du courant</label>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="radio" name="question10" id="q10Option3" value="c">
+        <label class="form-check-label option" for="q10Option3">c) Aucun effet sur le courant</label>
+    </div>
+    <button class="btn btn-primary" onclick="checkAnswer(10)">Vérifier la Réponse</button>
+    <p id="result10"></p>
+</div>
+
+
+                <!-- Bouton Suivant -->
+    <div id="nextButtonContainer" class="page-container" style="display: none;">
+        <button class="btn btn-success" onclick="nextQuestion()">Suivant</button>
+    </div>
+
+    
+<!-- Section des Résultats Finaux -->
+<div id="finalResults" class="result-container" style="display: none;">
+    <h3>Résultats Finaux :</h3>
+    <p id="score">Score: 0</p>
+    <p id="correctAnswersCount">Nombre de bonnes réponses: 0</p>
+</div>
+<!-- Inclure Bootstrap JS et jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.7.0/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
