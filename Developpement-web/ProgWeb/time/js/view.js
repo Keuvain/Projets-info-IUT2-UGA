@@ -1,0 +1,20 @@
+// Définition des paramètres de la vue 
+const view = {
+    // 
+    ///////////////////////////////////////////////////////
+    // A COMPLETER
+    ///////////////////////////////////////////////////////
+
+    //  La zone de sortie
+    output: document.getElementsByTagName("output")[0],
+
+    // Fonction qui affiche une date dans la balise output
+    show: function (time) {
+        // 
+        ///////////////////////////////////////////////////////
+        // A COMPLETER
+        ///////////////////////////////////////////////////////
+
+        // 
+    }
+}

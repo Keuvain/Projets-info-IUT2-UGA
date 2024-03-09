@@ -1,0 +1,61 @@
+ 
+<?php
+const MIN = 1;
+const MAX = 10;
+
+session_start();
+
+// Générer des nombres aléatoires s'il s'agit d'une nouvelle question ou de la première visite
+if (!isset($_POST['action']) || $_POST['action'] == 'new') {
+    $_SESSION['x'] = rand(MIN, MAX);
+    $_SESSION['y'] = rand(MIN, MAX);
+    $_SESSION['z'] = rand(MIN, MAX);
+}
+
+// Vérifier la réponse
+$result = '';
+if (isset($_POST['action']) && $_POST['action'] == 'answer') {
+    $a = $_POST['a'];
+    $b = $_POST['b'];
+
+    // Calcul de la réponse correcte
+    $correctNumerator = $_SESSION['y'] + ($_SESSION['x'] * $_SESSION['z']);
+    $correctDenominator = $_SESSION['z'];
+
+    // Vérifier si la réponse de l'utilisateur est correcte
+    if ($a == $correctNumerator && $b == $correctDenominator) {
+        $result = "OK";
+    } else {
+        $result = "KO";
+    }
+}
+?>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>dditionner un entier et une fraction</title>
+  <link rel="stylesheet" href="design/style.css">
+</head>
+<body>
+    <h1>Additionner un entier et une fraction</h1>
+    <form action="" method="post">
+        <fieldset>
+
+            <?= $_SESSION['x'] ?> + <sup><?= $_SESSION['y'] ?></sup>&frasl;<sub><?= $_SESSION['z'] ?></sub> =
+            <sup><input type="number" name="a" value="<?= $a ?? '' ?>" /></sup>
+            &frasl;
+            <sub><input type="number" name="b" value="<?= $b ?? '' ?>" /></sub>
+
+            <?php if ($result == "OK"): ?>
+                <output class="OK">&#x2713; Correct !</output>
+            <?php elseif ($result == "KO"): ?>
+                <output class="KO">&#x26CC; Faux ...</output>
+            <?php endif; ?>
+        </fieldset>
+        <button type="submit" name="action" value="new">Nouvelle question</button>
+        <button type="submit" name="action" value="answer">Votre réponse ?</button>
+    </form>
+</body>
+</html>

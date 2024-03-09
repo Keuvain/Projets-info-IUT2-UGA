@@ -1,0 +1,34 @@
+1|Produits|1
+2|Terrasse et Jardin|1
+3|Abri, garage, rangement et étendage|2
+4|Abri de jardin|3
+5|Décoration & Eclairage|1
+6|Luminaire intérieur|5
+7|Applique murale|6
+8|Eclairage de salle de bains|6
+9|Outillage|1
+10|Outillage à main|9
+11|Clé et douille|10
+12|Petit rangement (coffre, étagère, ...)|3
+13|Coussin, plaid et pouf|5
+14|Coussin et housse de coussin|13
+15|Rideau, voilage et vitrage|5
+16|Embrasse et gland|15
+17|Galette de chaise, coussin de sol et pouf|13
+18|Garage et carport|3
+19|Carrelage, parquet & sol souple|1
+20|Moquette, jonc de mer et sisal|19
+21|Jonc de mer, sisal et fibre naturelle pour sol|20
+22|Lampe|6
+23|Lustre, suspension et plafonnier|6
+24|Marteau|10
+25|Moquette de sol en rouleau|20
+26|Tapis et paillasson|19
+27|Paillasson, tapis de propreté|26
+28|Perceuse, ponceuse, meuleuse et scie électrique|9
+29|Perceuse sans fil et visseuse|28
+30|Rideau|15
+31|Spot|6
+32|Tapis de décoration|26
+33|Vitrage, brise-bise|15
+34|Voilage|15

@@ -1,0 +1,287 @@
+DANS SHELL
+
+sqlite3 qcm.db
+
+
+
+
+ Pour charger le schéma de la BD, lancer la commande (dans sqlite):
+
+.read create.sql
+
+ Charger les données dans la base avec la commande (dans sqlite) :
+
+
+.import etudiants.txt contact
+.import qcm.txt contact
+.import question_qcm.txt contact
+.import question.txt contact
+.import reponse.txt contact
+
+ Tester le chargement avec une requête SQL (dans sqlite):
+
+requete sql
+
+1 ) class DAO {
+    // ... autres membres et méthodes ...
+
+    /**
+     * Exécute une requête SQL qui ne retourne pas de résultat.
+     *
+     * @param string $query La requête SQL à exécuter.
+     * @param array $data Les paramètres de la requête sous forme de tableau associatif.
+     */
+    public function exec(string $query, array $data = array()): void {
+        $stmt = $this->db->prepare($query);
+
+        // Stockage de la dernière requête et de ses données pour le débogage
+        $this->lastQuery = $query;
+        $this->lastData = $data;
+
+        // Exécution de la requête préparée avec les données fournies
+        $stmt->execute($data);
+    }
+
+    /**
+     * Affiche la dernière requête SQL exécutée avec ses paramètres.
+     */
+    public function debug() {
+        echo "Dernière requête: " . $this->lastQuery . "\n";
+        echo "Paramètres: ";
+        print_r($this->lastData);
+    }
+
+    // ... autres méthodes ...
+}
+
+-------------------------------------------------------------
+
+Classe Etudiant
+php
+Copy code
+class Etudiant {
+    // ...
+
+    public static function read(string $login): Etudiant {
+        $dao = DAO::getInstance();
+        $sql = "SELECT * FROM etudiant WHERE login = :login";
+        $result = $dao->query($sql, ['login' => $login]);
+        $data = $result->fetch();
+        if ($data) {
+            return new Etudiant($data['login'], $data['nom'], $data['prenom'], $data['groupe'], $data['mdp']);
+        } else {
+            throw new Exception("Aucun étudiant trouvé avec le login {$login}");
+        }
+    }
+
+    // ...
+}
+Classe Reponse
+php
+Copy code
+class Reponse {
+    // ...
+
+    public static function readFromQuestion(Question $question): array {
+        $dao = DAO::getInstance();
+        $sql = "SELECT * FROM reponse WHERE questionId = :questionId";
+        $result = $dao->query($sql, ['questionId' => $question->getId()]);
+        return $result->fetchAll(PDO::FETCH_CLASS, 'Reponse');
+    }
+
+    public function readQuestion(): Question {
+        $dao = DAO::getInstance();
+        $sql = "SELECT * FROM question WHERE id = :questionId";
+        $result = $dao->query($sql, ['questionId' => $this->questionId]);
+        return $result->fetchObject('Question');
+    }
+
+    // ...
+}
+Classe QCM
+php
+Copy code
+class QCM {
+    // ...
+
+    public static function readAll(): array {
+        $dao = DAO::getInstance();
+        $sql = "SELECT * FROM qcm";
+        $result = $dao->query($sql);
+        return $result->fetchAll(PDO::FETCH_CLASS, 'QCM');
+    }
+
+    public function countQuestion(): int {
+        $dao = DAO::getInstance();
+        $sql = "SELECT COUNT(*) FROM question_qcm WHERE qcmId = :qcmId";
+        $result = $dao->query($sql, ['qcmId' => $this->id]);
+        return $result->fetchColumn();
+    }
+
+    public function readQuestion(int $num): Question {
+        $dao = DAO::getInstance();
+        $sql = "SELECT question.* FROM question
+                INNER JOIN question_qcm ON question.id = question_qcm.questionId
+                WHERE question_qcm.qcmId = :qcmId LIMIT 1 OFFSET :num";
+        $result = $dao->query($sql, ['qcmId' => $this->id, 'num' => $num - 1]);
+        return $result->fetchObject('Question');
+    }
+
+    // ...
+}
+Classe Tentative
+php
+Copy code
+class Tentative {
+    // ...
+
+    public function create(): void {
+        $dao = DAO::getInstance();
+        $sql = "INSERT INTO tentative (login, date, qcmId, reponseId) VALUES (:login, :date, :qcmId, :reponseId)";
+        $dao->exec($sql, ['login' => $this->login, 'date' => $this->date, 'qcmId' => $this->qcmId, 'reponseId' => $this->reponseId]);
+    }
+
+    public static function datesFromQCMEtudiant(QCM $qcm, Etudiant $etudiant): array {
+        $dao = DAO::getInstance();
+        $sql = "SELECT DISTINCT date FROM tentative WHERE qcmId = :qcmId AND login = :login";
+        $result = $dao->query($sql, ['qcmId' => $qcm->getId(), 'login' => $etudiant->getLogin()]);
+        return $result->fetchAll(PDO::FETCH_COLUMN);
+    }
+
+    // ...
+}
+
+-----------------------------------------------------------------------------------------------------------------------------------
+index.php
+Ici, vous devez gérer le processus de connexion et stocker l'étudiant dans la session si le login et le mot de passe sont corrects.
+
+php
+Copy code
+<?php
+session_start();
+include_once(__DIR__ . "/framework/view.class.php");
+include_once(__DIR__ . "/model/etudiant.class.php");
+
+$view = new View();
+
+if (isset($_POST['login']) && isset($_POST['password'])) {
+    $login = $_POST['login'];
+    $password = $_POST['password'];
+
+    // Ici, ajoutez la logique pour vérifier le mot de passe
+    $etudiant = Etudiant::read($login);
+    if ($etudiant && password_verify($password, $etudiant->getMdp())) {
+        $_SESSION['etudiant'] = $etudiant;
+        header('Location: controler/main.ctrl.php');
+        exit(0);
+    } else {
+        $view->assign('message', 'Login ou mot de passe incorrect');
+    }
+}
+
+$view->display("login.view.php");
+?>
+-------------
+deconnecter.ctrl.php
+Ce fichier doit gérer la déconnexion de l'utilisateur.
+
+php
+Copy code
+<?php
+session_start();
+include_once(__DIR__ . "/../framework/view.class.php");
+
+session_destroy();
+header('Location: index.php');
+exit;
+?>
+------------
+main.ctrl.php
+Avant d'afficher les informations, vous devez vérifier si l'utilisateur est connecté.
+
+php
+Copy code
+<?php
+session_start();
+include_once(__DIR__."/../framework/view.class.php");
+include_once(__DIR__."/../model/etudiant.class.php");
+include_once(__DIR__."/../model/qcm.class.php");
+
+if (!isset($_SESSION['etudiant'])) {
+    header('Location: index.php');
+    exit;
+}
+
+$qcms = QCM::readAll();
+
+$view = new View();
+$view->assign('etudiant', $_SESSION['etudiant']);
+$view->assign('qcms', $qcms);
+$view->display("main.view.php");
+?>
+----------
+qcm.ctrl.php
+Assurez-vous que l'utilisateur est connecté avant d'afficher les questions du QCM.
+
+php
+Copy code
+<?php
+session_start();
+include_once(__DIR__ . "/../framework/view.class.php");
+include_once(__DIR__ . "/../model/etudiant.class.php");
+include_once(__DIR__ . "/../model/qcm.class.php");
+
+if (!isset($_SESSION['etudiant'])) {
+    header('Location: index.php');
+    exit;
+}
+
+$qcmId = 1; // Obtenez cet ID dynamiquement
+$numQuestion = 3; // Obtenez ce numéro dynamiquement
+
+$qcm = QCM::read($qcmId);
+$question = $qcm->readQuestion($numQuestion);
+$reponses = $question->getAnswersShuffle();
+
+if ($question->countGoodAnswsers() > 1) {
+    $inputType = 'checkbox';
+} else {
+    $inputType = 'radio';
+}
+
+$view = new View();
+$view->assign('etudiant', $_SESSION['etudiant']);
+$view->assign('question', $question);
+$view->assign('numQuestion', $numQuestion);
+$view->assign('reponses', $reponses);
+$view->assign('inputType', $inputType);
+$view->display("qcm.view.php");
+?>
+------
+resultat.ctrl.php
+Assurez-vous également que l'utilisateur est connecté avant d'afficher les résultats.
+
+php
+Copy code
+<?php
+session_start();
+include_once(__DIR__."/../framework/view.class.php");
+include_once(__DIR__."/../model/etudiant.class.php");
+include_once(__DIR__."/../model/qcm.class.php");
+
+if (!isset($_SESSION['etudiant'])) {
+    header('Location: index.php');
+    exit;
+}
+
+$qcmId = 1; // Obtenez cet ID dynamiquement
+
+$qcm = QCM::read($qcmId);
+$res = Tentative::readAllResults($qcm, $_SESSION['etudiant']);
+
+$view = new View();
+$view->assign('etudiant', $_SESSION['etudiant']);
+$view->assign('qcm', $qcm);
+$view->assign('res', $res);
+$view->display("resultat.view.php");
+?>
