@@ -1,0 +1,23 @@
+{
+  "name": "example-money",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha",
+    "coverage": "nyc npm run test",
+    "coverage-html": "nyc --reporter=html npm run test"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "mocha": "^9.2.2",
+    "nyc": "^15.1.0"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "description": "",
+  "dependencies": {
+    "chai": "^4.3.6"
+  }
+}

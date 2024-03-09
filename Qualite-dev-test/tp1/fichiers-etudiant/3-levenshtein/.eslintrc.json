@@ -1,0 +1,26 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true,
+        "node": true
+    },
+    "extends": [
+        "standard"
+    ],
+    "parserOptions": {
+        "ecmaVersion": "latest",
+        "sourceType": "module"
+    },
+    "globals": {
+      "describe": true,
+      "beforeEach": true,
+      "before": true,
+      "afterEach": true,
+      "it": true
+    },
+    "rules": {
+      "semi": 0,
+      "prefer-const": 1,
+      "one-var": 0
+    }
+}

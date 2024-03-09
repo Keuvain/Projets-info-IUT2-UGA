@@ -1,0 +1,12 @@
+Ce sont les deux branches qui ne sont pas couverte par le test
+
+// In any case a pawn cannot move more than 2 cases vertically
+  // and one case horizontally
+  Iif (delta.rank > 2 || delta.file > 1) {
+    return false;
+  }
+
+// A black pawn "goes down" the chessboard
+  Iif (this.color === Color.BLACK && isGoingUp) {
+    return false;
+  }

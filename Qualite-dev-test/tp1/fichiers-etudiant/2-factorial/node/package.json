@@ -1,0 +1,20 @@
+{
+  "name": "example-factorial",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha",
+    "coverage": "nyc npm run test",
+    "coverage-html": "nyc --reporter=html npm run test"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "mocha": "^9.2.0",
+    "nyc": "^15.1.0"
+  },
+  "description": ""
+}
