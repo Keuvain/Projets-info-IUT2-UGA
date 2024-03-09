@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="fr" target-language="en" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="mVPYqTY" resname="boutique.index.boutique">
+        <source>boutique.index.boutique</source>
+        <target>Shop 04 suggested department(s)</target>
+      </trans-unit>
+      <trans-unit id="P5lEkmj" resname="navbar.accueil">
+        <source>navbar.accueil</source>
+        <target>Home</target>
+      </trans-unit>
+      <trans-unit id="rIsAC1h" resname="navbar.boutique">
+        <source>navbar.boutique</source>
+        <target>Shop</target>
+      </trans-unit>
+      <trans-unit id="iVNeBrZ" resname="navbar.contact">
+        <source>navbar.contact</source>
+        <target>Contact</target>
+      </trans-unit>
+      <trans-unit id="yi_J3BU" resname="default.index.titre">
+        <source>default.index.titre</source>
+        <target>Shop R4.01</target>
+      </trans-unit>
+      <trans-unit id="b32Kf4K" resname="default.index.home">
+        <source>default.index.home</source>
+        <target>Here, nothing to sell, just to learn...</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

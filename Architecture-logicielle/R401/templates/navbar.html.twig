@@ -1,0 +1,60 @@
+{# barre de navigation  #}
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+	<a class="navbar-brand" href="{{ path("app_default_index") }}">
+		<i class="fas fa-home"></i>
+		{% trans %}navbar.accueil{% endtrans %}
+	</a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarsExampleDefault">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item">
+				<a class="nav-link" href="{{ path("app_boutique") }}">
+					<i class="fas fa-store"></i>
+					{% trans %}navbar.boutique{% endtrans %}
+				</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="{{ path("app_default_contact") }}">
+					<i class="fas fa-comments"></i>
+					{% trans %}navbar.contact{% endtrans %}
+				</a>
+			</li>
+		</ul>
+		<!-- Début champ de recherche -->
+<form class="form-inline my-2 my-lg-0" action="{{ path('app_boutique_chercher', {'_locale': app.request.locale}) }}" method="get">
+    <input class="form-control mr-sm-2" type="search" placeholder="Rechercher" aria-label="Recherche" name="recherche">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Rechercher</button>
+</form>
+
+<!-- Fin champ de recherche -->
+
+		<!-- Début menu des monnaies -->
+		{# TODO #}
+		<!-- Fin menu des monnaies -->
+		<!-- Début menu des langues -->
+		<div class="nav-item dropdown">
+    {% set currentLocale = app.request.locale %}
+
+    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <img src="{{ asset('images/locale/' ~ currentLocale ~ '.png') }}"/>
+
+
+    </a>
+    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+        {% for locale in supported_locales | split('|') %}
+            {% if locale != currentLocale %}
+                {% set params = app.request.attributes.get('_route_params') | merge({'_locale': locale}) %}
+                <a class="dropdown-item" href="{{ path(app.request.attributes.get('_route'), params) }}"> 
+					<img src="{{ asset('images/locale/' ~ locale ~ '.png') }}"/>
+				</a>
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>
+		<!-- Fin Menu des langues -->
+	</div>
+</nav>
+
+
